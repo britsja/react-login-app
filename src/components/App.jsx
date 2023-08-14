@@ -3,16 +3,22 @@ import Login from './Login';
 
 let isLoggedIn = false;
 
-function renderConditionally() {
-  if (isLoggedIn) {
-    return <h1>Hello</h1>;  
+let userIsRegistered = true;
+
+function evalUser() {
+  if(isLoggedIn) {
+    return <h1>Hello World</h1>;
   } else {
-    return <Login />;
-  }
+    if(userIsRegistered) {
+      return  <Login showRegistration="false" />;
+    } else {
+      return  <Login showRegistration="true" />;
+    }
+  }  
 }
 
 function App() {
-  return renderConditionally();
+  return evalUser();
 }
 
 export default App;
