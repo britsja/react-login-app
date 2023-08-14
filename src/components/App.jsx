@@ -10,9 +10,9 @@ function evalUser() {
     return <h1>Hello World</h1>;
   } else {
     if(userIsRegistered) {
-      return  <Login showRegistration="false" />;
+      return  <Login showRegistration={!userIsRegistered} />;
     } else {
-      return  <Login showRegistration="true" />;
+      return  <Login showRegistration={!userIsRegistered} />;
     }
   }  
 }
